@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE dictionary SYSTEM "file://localhost/System/Library/DTDs/sdef.dtd">
+<dictionary title="Tunnelblick Terminology">
+	<suite name="Tunnelblick Suite" code="tblk" description="Tunnelblick AppleScript support">
+		
+		<class name="application" code="capp" description="">
+			<cocoa class="NSApplication"/>
+			<element type="configuration" access="r">
+				<cocoa key="applescriptConfigurationList"/>
+			</element>
+		</class>
+		
+		<class name="configuration" code="TBco" description="A VPN configuration." plural="configurations">
+			<cocoa class="VPNConnection"/>
+			
+			<property name="name" code="TBnm" type="text" access="r" description="Name of the configuration.">
+				<cocoa key="displayName"/>
+			</property>
+			
+			<property name="state" code="TBst" type="text" access="r"
+				      description="State of the configuration. 'EXITING' means disconnecting or disconnected. 'CONNECTED' means connected. Other values show progress towards a connection.">
+				<cocoa key="state"/>
+			</property>
+			
+			<property name="autoconnect" code="TBac" type="text" access="r" description="'LAUNCH' means the configuration will be connected automatically when Tunnelblick launches. 'START' means the configuration will be connected automatically when the computer starts. 'NO' means the configuration will not be connected automatically.">
+				<cocoa key="autoConnect"/>
+			</property>
+			
+			<property name="bytesIn" code="TBbi" type="text" access="r"
+				      description="The number of bytes that have come in through the connection since Tunnelblick was launched. (For client configurations only. This will return '0' for configurations that are functioning as a server.)">
+				<cocoa key="bytesIn"/>
+			</property>
+			
+			<property name="bytesOut" code="TBbo" type="text" access="r"
+				      description="The number of bytes that have gone out through the connection since Tunnelblick was launched. (For client configurations only. This will return '0' for configurations that are functioning as a server.)">
+				<cocoa key="bytesOut"/>
+			</property>
+		
+		</class>
+				
+		<command name="connect" code="TBLKConn" description="Connect a VPN configuration.">
+			<cocoa class="ApplescriptConnect"/>
+			<direct-parameter description="Name of configuration to connect." type="text"/>
+			<result type="boolean" description="Returns true if a connection is being attempted, false if the configuration is already connected."/>
+		</command>
+		
+		<command name="disconnect" code="TBLKDisc" description="Disconnect a VPN configuration.">
+			<cocoa class="ApplescriptDisconnect"/>
+			<direct-parameter description="Name of configuration to disconnect." type="text"/>
+			<result type="boolean" description="Returns true if a disconnection is being attempted, false if the configuration is already disconnected."/>
+		</command>
+		
+		<command name="connect all" code="TBLKCona" description="Connect all unconnected VPN configurations.">
+			<cocoa class="ApplescriptConnectAll"/>
+			<result type="integer" description="Returns the number of configurations for which a connection is being attempted."/>
+		</command>
+		
+		<command name="disconnect all" code="TBLKDisa" description="Disconnect all connected VPN configurations.">
+			<cocoa class="ApplescriptDisconnectAll"/>
+			<result type="integer" description="Returns the number of configurations for which a disconnection is being attempted."/>
+		</command>
+		
+		<command name="disconnect all except when computer starts" code="TBLKDisb" description="Disconnect all connected VPN configurations except 'when computer starts' configurations.">
+			<cocoa class="ApplescriptDisconnectAllBut"/>
+			<result type="integer" description="Returns the number of configurations for which a disconnection is being attempted."/>
+		</command>
+		
+		<command name="quit" code="TBLKQuit" description="Quit Tunnelblick gracefully.">
+			<cocoa class="ApplescriptQuit"/>
+			<result type="integer" description="Returns 0."/>
+		</command>
+		
+		<command name="changed openvpn configuration file for" code="TBLKCovc" description="Notify Tunnelblick that an OpenVPN configuration file has been changed">
+			<cocoa class="ApplescriptHaveChangedOpenvpnConfigurationFileFor"/>
+			<direct-parameter description="Name of configuration whose OpenVPN configuration file was changed" type="text"/>
+			<result type="boolean" description="Returns 0."/>
+		</command>
+		
+		<command name="added or removed configurations" code="TBLKARCo" description="Notify Tunnelblick that one or more VPN configurations have been added and/or removed.">
+			<cocoa class="ApplescriptHaveAddedAndOrRemovedOneOrMoreConfigurations"/>
+			<result type="boolean" description="Returns 0."/>
+		</command>
+		
+		<command name="save username" code="TBLKSaUn" description="Save the username for a VPN configuration in the Keychain.">
+			<cocoa class="ApplescriptSaveUsername"/>
+			<direct-parameter description="Username" type="text"/>
+			<parameter name="for" code="tbk1" description="Name of configuration whose username is to be set." type="text"/>
+			<result type="boolean" description="Returns true if the username was set, false if the username could not be set."/>
+		</command>
+
+		<command name="save password" code="TBLKSaPw" description="Save the password for a VPN configuration in the Keychain.">
+			<cocoa class="ApplescriptSavePassword"/>
+			<direct-parameter description="Password" type="text"/>
+			<parameter name="for" code="tbk2" description="Name of configuration whose password is to be set." type="text"/>
+			<result type="boolean" description="Returns true if the password was set, false if the password could not be set."/>
+		</command>
+
+		<command name="save passphrase" code="TBLKSaPp" description="Save the passphrase for a VPN configuration in the Keychain.">
+			<cocoa class="ApplescriptSavePassphrase"/>
+			<direct-parameter description="Passphrase" type="text"/>
+			<parameter name="for" code="tbk3" description="Name of configuration whose passphrase is to be set." type="text"/>
+			<result type="boolean" description="Returns true if the passphrase was set, false if the passphrase could not be set."/>
+		</command>
+
+		<command name="delete all credentials for" code="TBLKDelC" description="Delete all of the credentials (username, password, and passphrase) for a VPN configuration.">
+			<cocoa class="ApplescriptDeleteAllCredentials"/>
+			<direct-parameter description="Name of configuration whose credentials are to be deleted." type="text"/>
+			<result type="boolean" description="Returns true if the credentials were deleted, false if the credentials could not be deleted."/>
+		</command>
+
+	</suite>
+</dictionary>

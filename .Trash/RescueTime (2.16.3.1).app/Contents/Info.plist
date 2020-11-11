@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>BuildMachineOSBuild</key>
+	<string>20A5343i</string>
+	<key>CFBundleDevelopmentRegion</key>
+	<string>English</string>
+	<key>CFBundleDisplayName</key>
+	<string>RescueTime</string>
+	<key>CFBundleExecutable</key>
+	<string>RescueTime</string>
+	<key>CFBundleIconFile</key>
+	<string>rescuetime_icon_color</string>
+	<key>CFBundleIdentifier</key>
+	<string>com.rescuetime.RescueTime</string>
+	<key>CFBundleInfoDictionaryVersion</key>
+	<string></string>
+	<key>CFBundleName</key>
+	<string>RescueTime</string>
+	<key>CFBundlePackageType</key>
+	<string>APPL</string>
+	<key>CFBundleShortVersionString</key>
+	<string>2.16.3.1</string>
+	<key>CFBundleSignature</key>
+	<string>RSCU</string>
+	<key>CFBundleSupportedPlatforms</key>
+	<array>
+		<string>MacOSX</string>
+	</array>
+	<key>CFBundleVersion</key>
+	<string>2.16.3.1</string>
+	<key>DTCompiler</key>
+	<string>com.apple.compilers.llvm.clang.1_0</string>
+	<key>DTPlatformBuild</key>
+	<string>11E708</string>
+	<key>DTPlatformVersion</key>
+	<string>GM</string>
+	<key>DTSDKBuild</key>
+	<string>19G68</string>
+	<key>DTSDKName</key>
+	<string>macosx10.15</string>
+	<key>DTXcode</key>
+	<string>1160</string>
+	<key>DTXcodeBuild</key>
+	<string>11E708</string>
+	<key>LSApplicationCategoryType</key>
+	<string>public.app-category.productivity</string>
+	<key>LSMinimumSystemVersion</key>
+	<string>10.10</string>
+	<key>LSUIElement</key>
+	<true/>
+	<key>NSAppleEventsUsageDescription</key>
+	<string>RescueTime requires scripting access to some applications for window title tracking and supported web browsers for url tracking and FocusTime website blocking.</string>
+	<key>NSHumanReadableCopyright</key>
+	<string>Copyright 2007-2018 RescueTime, Inc.</string>
+	<key>NSMainNibFile</key>
+	<string>RescueTime</string>
+	<key>NSPrincipalClass</key>
+	<string>NSApplication</string>
+	<key>NSRequiresAquaSystemAppearance</key>
+	<false/>
+	<key>NSSupportsSuddenTermination</key>
+	<false/>
+	<key>SUAllowsAutomaticUpdates</key>
+	<false/>
+	<key>SUFeedURL</key>
+	<string>https://www.rescuetime.com/installers/appcast</string>
+	<key>SUPublicDSAKeyFile</key>
+	<string>dsa_pub.pem</string>
+	<key>SUScheduledCheckInterval</key>
+	<integer>172800</integer>
+</dict>
+</plist>
